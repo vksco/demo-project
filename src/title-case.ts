@@ -4,5 +4,12 @@
  * See tests/title-case.test.ts for the exact contract.
  */
 export function titleCase(_input: string): string {
-  throw new Error("not implemented");
+  const stopWords = new Set(["a", "an", "and", "the", "of", "to", "in", "on", "or", "for"]);
+  const words = _input.toLowerCase().split(" ");
+  return words.map((word, i) => {
+    if (i > 0 && i < words.length - 1 && stopWords.has(word)) {
+      return word;
+    }
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join(" ");
 }

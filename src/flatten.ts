@@ -5,5 +5,13 @@
 export type Nested<T> = Array<T | Nested<T>>;
 
 export function flatten<T>(_input: Nested<T>): T[] {
-  throw new Error("not implemented");
+  const result: T[] = [];
+  for (const item of _input) {
+    if (Array.isArray(item)) {
+      result.push(...flatten(item));
+    } else {
+      result.push(item);
+    }
+  }
+  return result;
 }
