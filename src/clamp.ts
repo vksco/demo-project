@@ -6,5 +6,5 @@ export function clamp(n: number, min: number, max: number): number {
   if (min > max) {
     throw new Error("clamp: min must be <= max");
   }
-  return Math.min(Math.max(n, min), max);
+  return Math.min(Math.max(n, min), max) | 0;
 }
