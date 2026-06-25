@@ -2,6 +2,9 @@
  * Clamp a number into the inclusive range [min, max].
  * See tests/clamp.test.ts for the exact contract.
  */
-export function clamp(_n: number, _min: number, _max: number): number {
-  throw new Error("not implemented");
+export function clamp(n: number, min: number, max: number): number {
+  if (min > max) {
+    throw new Error("clamp: min must be <= max");
+  }
+  return Math.min(Math.max(n, min), max);
 }
