@@ -7,8 +7,8 @@ export function chunk<T>(items: T[], size: number): T[][] {
     throw new Error("chunk: size must be >= 1");
   }
   const out: T[][] = [];
-  for (let i = 0; i < items.length; i += size) {
-    out.push(items.slice(i, i + size));
+  while (items.length > 0) {
+    out.push(items.splice(0, size));
   }
   return out;
 }
