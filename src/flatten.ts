@@ -5,13 +5,9 @@
 export type Nested<T> = Array<T | Nested<T>>;
 
 export function flatten<T>(input: Nested<T>): T[] {
-  const out: T[] = [];
-  for (const item of input) {
-    if (Array.isArray(item)) {
-      out.push(...flatten(item as Nested<T>));
-    } else {
-      out.push(item);
-    }
-  }
-  return out;
+  return input.reduce<T[]>(
+    (acc, item) =>
+      Array.isArray(item) ? acc.concat(flatten(item as Nested<T>)) : acc.concat(item),
+    [],
+  );
 }
