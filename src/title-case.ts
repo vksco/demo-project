@@ -17,7 +17,7 @@ export function titleCase(input: string): string {
     .map((word, i) => {
       const lower = word.toLowerCase();
       const isEdge = i === 0 || i === words.length - 1;
-      if (!isEdge && STOP_WORDS.has(lower)) {
+      if (!isEdge && STOP_WORDS.has(word)) {
         return lower;
       }
       return capitalize(word);
