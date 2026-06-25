@@ -16,7 +16,7 @@ export function parseQuery(qs: string): Record<string, QueryValue> {
     const rawVal = eq === -1 ? "" : pair.slice(eq + 1);
     const key = decodeURIComponent(rawKey);
     const val = decodeURIComponent(rawVal);
-    if (Object.prototype.hasOwnProperty.call(out, key)) {
+    if (out[key] !== undefined) {
       const existing = out[key];
       out[key] = Array.isArray(existing) ? [...existing, val] : [existing, val];
     } else {
