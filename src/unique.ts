@@ -3,5 +3,5 @@
  * See tests/unique.test.ts for the exact contract.
  */
 export function unique<T>(items: T[]): T[] {
-  return [...new Set(items)];
+  return items.filter((item, i) => items.indexOf(item) === i);
 }
