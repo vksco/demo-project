@@ -48,6 +48,23 @@
         ]
       },
       "message": "Every Python function should have a docstring."
+    },
+    {
+      "id": "demo-skip-test",
+      "severity": "low",
+      "match": {
+        "kind": "structural",
+        "pattern": "exec($X)"
+      },
+      "scope": {
+        "paths": [
+          "*.py"
+        ],
+        "languages": [
+          "Python"
+        ]
+      },
+      "message": "demo skip"
     }
   ]
 }
