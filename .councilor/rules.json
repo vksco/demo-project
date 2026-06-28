@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1",
+  "rules": [
+    {
+      "id": "no-print",
+      "severity": "medium",
+      "match": {
+        "kind": "structural",
+        "pattern": "print($MSG)"
+      },
+      "scope": {
+        "paths": [
+          "*.py"
+        ],
+        "languages": [
+          "Python"
+        ]
+      },
+      "message": "Avoid print(); use the logging module instead."
+    }
+  ]
+}
