@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1",
+  "rules": [
+    {
+      "id": "require-docstrings",
+      "severity": "medium",
+      "match": {
+        "kind": "nl",
+        "instruction": "Every Python function must have a docstring describing what it does."
+      },
+      "scope": {
+        "paths": [
+          "*.py"
+        ]
+      },
+      "message": "Every Python function should have a docstring."
+    }
+  ]
+}
