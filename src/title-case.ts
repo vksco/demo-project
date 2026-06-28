@@ -8,7 +8,7 @@ const STOP_WORDS = new Set([
 ]);
 
 function capitalize(word: string): string {
-  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  return word.charAt(0).toLocaleUpperCase() + word.slice(1).toLocaleLowerCase();
 }
 
 export function titleCase(input: string): string {
