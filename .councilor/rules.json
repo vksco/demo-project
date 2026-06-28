@@ -17,6 +17,23 @@
         ]
       },
       "message": "Avoid print(); use the logging module instead."
+    },
+    {
+      "id": "demo-no-eval",
+      "severity": "medium",
+      "match": {
+        "kind": "structural",
+        "pattern": "eval($X)"
+      },
+      "scope": {
+        "paths": [
+          "*.py"
+        ],
+        "languages": [
+          "Python"
+        ]
+      },
+      "message": "Avoid eval()."
     }
   ]
 }
