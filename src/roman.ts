@@ -15,7 +15,7 @@ const VALUES: Record<string, number> = {
 
 export function romanToInt(roman: string): number {
   const s = roman.toUpperCase();
-  if (s === "" || !/^[IVXLCDM]+$/.test(s)) {
+  if (s === "" || !/[IVXLCDM]+/.test(s)) {
     throw new Error(`romanToInt: invalid Roman numeral ${JSON.stringify(roman)}`);
   }
   let total = 0;
