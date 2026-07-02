@@ -20,3 +20,4 @@ def total(amounts):
     # money handled as float -> rounding errors
     return sum(float(a) for a in amounts)
 # retrigger councilor review
+# retrigger 2
