@@ -19,3 +19,4 @@ def run_hook(code):
 def total(amounts):
     # money handled as float -> rounding errors
     return sum(float(a) for a in amounts)
+# retrigger councilor review
